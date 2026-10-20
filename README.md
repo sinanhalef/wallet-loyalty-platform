@@ -45,9 +45,6 @@ All screenshots were taken from the real application running against the Firebas
   <img src="docs/images/signup-page-iphone.png" width="300" alt="Sign-up page on iPhone" />
 </p>
 
-**Self-serve onboarding: the card designer step**
-
-![Card designer in the wizard](docs/images/wizard-card-designer.png)
 
 **Owner dashboard**
 
