@@ -1,0 +1,29 @@
+rules_version = '2';
+
+// Firestore security rules (LOYALTY_PROJECT.md §8).
+//
+// Every client is denied everything. No exceptions, no roles, no tenancy
+// logic — because no client talks to Firestore.
+//
+// The scanner and the dashboard reach data only through the pass service,
+// which uses the Admin SDK; the Admin SDK bypasses these rules entirely, so
+// the service is unaffected by what is written here. The web bundle imports
+// Firebase Auth and nothing else (`web/src/firebase.ts`).
+//
+// This used to grant staff read access to their own shop, customers and
+// transactions, and owners an update on the shop document. Those grants were
+// never used, and they were a hole: a barista's token plus the public web
+// config was enough to list every customer's email, phone and birthdate with
+// the client SDK, which the API restricts to owners; and an owner could write
+// their shop document directly, skipping every check the service makes. Both
+// closed on 6 Sep 2026 (HANDOFF §25).
+//
+// If a client ever needs to read Firestore directly, the tenancy helpers that
+// were here are in git history. Prefer an endpoint.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
