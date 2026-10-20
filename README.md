@@ -32,11 +32,17 @@ All screenshots were taken from the real application running against the Firebas
 
 ![Try the till demo](docs/images/landing-till-demo.png)
 
-**Customer sign-up page (iPhone) and the generated Wallet pass**
+**Two example cards, as the card renderer draws them**
+
+<p>
+  <img src="docs/images/card-karakoy-firin.png" width="380" alt="Stamp card with a photo banner" />
+  <img src="docs/images/card-kuzguncuk-kahve.png" width="380" alt="Stamp card with a sticker strip" />
+</p>
+
+**Customer sign-up page (iPhone)**
 
 <p>
   <img src="docs/images/signup-page-iphone.png" width="300" alt="Sign-up page on iPhone" />
-  <img src="docs/images/wallet-pass-render.png" width="300" alt="Rendered .pkpass" />
 </p>
 
 **Self-serve onboarding: the card designer step**
